@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="task1">
+    <h2>
+        Bài 1: Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành.
+    </h2>
+    <button type="button" onclick="demso()">click de dem tu 1 den 99</button>
+    <script>
+        function demso(){
+        let number=0;
+        while (number <100){
+            document.write(number + "<br>")
+            number++;
+            if (number==100){
+                alert("da hoan thanh")
+                break;
+            }
+
+        }}
+    </script>
+</div>
+<div class="task2">
+    <h2>Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập. Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm nhiệt độ. Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ.</h2>
+    <button type="button" onclick="task2()">nhan de kiem tra nhiet do</button>
+    <script>
+        function task2(){
+        let temperature,giam,tang;
+        do{
+         temperature=prompt("nhap nhiet do hien tai")}
+        while (  isNaN(temperature)  ){
+             if ( temperature >100) {
+                 alert("giam nhiet do")
+                 while (temperature > 100) {
+                     giam = prompt("giam nhiet do hien tai")
+                     if (giam < 100) {
+                         break;
+                     }}}
+             else if (temperature <20){
+                 alert("tang nhiet do")
+                 while (temperature <20){
+                     tang=prompt("tang nhiet do hien tai")
+                     if (tang > 20){
+                     break;}
+                 }}
+
+             else alert("nhiet do binh thuong")
+
+
+                 }}
+    </script>
+</div>
+<div class="task3">
+    <h1>
+        Hiển thị ra 20 số trong dãy fibonacci đầu tiên
+    </h1>
+    <button type="button" onclick="task3()"> in ra so fibonacci </button>
+    <script>
+        function task3(){
+            let number = parseInt(prompt("Nhập n số fabonacci đầu tiên: "));
+            let a=0,b=1,c=0,i;
+            for ( i=0;i<= number;i++){
+                if(i<2){
+                    document.write(i +"</br>")
+                }
+                else {
+                    c=a+b;
+                    a=b;
+                    b=c;
+                    document.write(c + "</br>")
+                }
+            }
+          }
+
+    </script>
+</div>
+<div class="task4">
+    <h1> Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.</h1>
+    <button type="button" onclick="task4()">  Tính tổng của 20 số đầu tiên trong dãy fibonacci.</button>
+    <script>
+        function task4(){
+           let d=1;
+            let a=0,b=1,c=0,i;
+            for ( i=0;i< 18;i++) {
+                c=a+b;
+                a=b;
+                b=c;
+                d=d+c;
+
+            }
+            document.write(d + "</br>" );
+            }
+    </script>
+</div>
+<div class="task5">
+    <h1> Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên</h1>
+    <button type="button" onclick="task5()">   Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên</button>
+    <script>
+        function task5() {
+            let i,a=0,b=0;
+            for(i=7;i<=210;i++){
+                if (i%7==0 && b <30){
+                    a+=i;
+                    b++;
+                }
+
+            }document.write(a)
+        }
+        </script>
+
+</div>
+<div class="task6">
+    <h1>Game đoán số</h1>
+    <button type="button" onclick="task6()">  Game đoán số</button>
+    <script>
+        function task6() {
+           let enter=parseInt(prompt(" nhập vào muốn đoán trong khoảng nào"));
+           let x = Math.floor(Math.random()*enter);
+           console.log(x);
+           let c=0;
+           let doan=+(prompt("nhap so ban doan"))
+           while (doan !== x){
+               c++;
+               if(c==4){
+                   alert("ban da het luot choi");
+                   break;
+               }
+               else if(doan < x ){
+                       alert("ban doan so nho hon");
+                       }
+               else {
+                       alert("ban doan so lon hon");
+                      }
+               doan= +(prompt("nhap lai so ban doan"))
+               }
+          if(c==4){
+              document.write("ban da het luot choi")
+          }else
+              document.write("ban da doan dung")
+        }
+    </script>
+</div>
+<div class="task7">
+    <h1>Hãy viết một chương trình in ra các số từ 1 đến 100. Nhưng nếu số chia hết cho 3 thì in ra "Fizz", 5 thì in ra "Buzz" thay vì in ra số đó. Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".</h1>
+    <button type="button" onclick="task7()">  Hãy viết một chương trình in ra các số từ 1 đến 100. Nhưng nếu số chia hết cho 3 thì in ra "Fizz", 5 thì in ra "Buzz" thay vì in ra số đó. Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".</button>
+    <script>
+        function task7() {
+           let i;
+            for(i=1;i<=100;i++){
+            if(i%3==0 ){ document.write("fizz" + "</br>");continue}
+            else if ( i % 5 ==0){ document.write("Buzz" + "</br>");continue}
+            else if (i%3 ==0 && i%5 ==0){ document.write("BuzzFizz" + "</br>");continue}
+            else document.write(i + "<br>")
+            }
+        }
+    </script>
+</div>
+</body>
+</html>
