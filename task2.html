@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="task1">
+    <h2></h2>
+</div>
+<div class="task2"></div>
+<div class="task3">
+    <h2>Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau</h2>
+
+    <button type="btton" onclick="task3()">hình tam giac</button>
+    <button type="btton" onclick="tamgiac()">hình tam giac nguoc</button>
+    <button type="btton" onclick="tamgiacvuong()">hình tam giac vuong</button>
+    <button type="btton" onclick="hinhchunhat()">hình chu nhat</button>
+    <script>
+        let i,j;
+        function task3(){
+          for ( i =0;i <=5;i++){
+              for (j=0;j<=i;j++){
+              document.write("*");}
+              document.write("<br>")
+          }
+
+        }
+        function tamgiac(){
+            for ( i =0;i <=5;i++){
+                for (j=5;j>i;j--){
+                    document.write("*");}
+                document.write("<br>")
+            }
+        }
+        function tamgiacvuong(){
+            for ( i =0;i <5;i++){
+                for (j=i;j<4;j++){
+                    document.write("&nbsp");}
+                for( j=0;j<=i;j++){
+                    document.write("*");
+                }
+                document.write("<br>")
+            }
+        }
+        function hinhchunhat(){
+            for ( i =0;i <=7;i++){
+            if(i ==0 || i ==7){
+                for(j=0;j<=20;j++){
+                    document.write("*");
+                }}
+
+             else{
+                for (j=0;j<=20;j++){
+                    if (j == 0 || j ==20){
+                        document.write("*")
+                    }
+                    else
+                       document.writeln("&nbsp")
+                }
+             }
+             document.write("<br>")
+        }}
+
+
+
+    </script>
+</div>
+
+<div class="task4">
+    <h1>Bài 5: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.</h1>
+    <button type="button" onclick="task4()"> tinh tien lai  </button>
+    <script>
+
+        function task4() {
+            let number=+prompt("nhap so tien gui");
+            let month=+prompt("nhap so thang gui");
+            let money=0;
+            let i=0,laisuat;
+            switch (month){
+                case 1 :
+                    laisuat=3.65/100;
+                    break;
+                case 3 :
+                    laisuat=4/100;
+                    break;
+                case 6 :
+                    laisuat=5.6/100;
+                    break;
+                case 9 :
+                    laisuat=5.7/100;
+                    break;
+                case 12 :
+                    laisuat=6.2/100;
+                    break;
+                case 18 :
+                    laisuat=8.8/100;
+                    break;
+                case 24 :
+                case 36 :
+                    laisuat=6/100;
+                    break;
+                default :
+                    laisuat=0.2/100;
+            }
+            while (i < month){
+                money = number*laisuat +number;
+                i++;
+            }
+            document.write("so tien ban nhan duoc sau " + month + " thang la: "+ money)
+        }
+
+
+    </script>
+
+</div>
+<div class="task6">
+    <h1>o day co 1 trai tim</h1>
+    <button type="button" onclick="tim()">o day co 1 trai tim</button>
+    <script>
+        function tim() {
+        let i,j;
+        for (i=0;i<=5;i++){
+            for (j=0;j<=6;j++){
+                if(i==0 && j== 1 || i==0 &&j==2 ||i==0 && j==4 ||i==0 &&j==5)
+                         document.write("*")
+                else if(i==1 && j==0 ||i==1&& j==3||i==1 &&j==6)
+                    document.write("*")
+                else if(i==2&&j==0||i==2&&j==6)
+                    document.write("*")
+                else if (i==3&&j==1||i==3&&j==5)
+                    document.write("*")
+                else if (i==4&&j==2||i==4&&j==4)
+                    document.write("*")
+                else if (i==5&&j==3)
+                    document.write("*")
+                else
+                document.write("&nbsp;")}
+            document.write("<br>")
+        }}
+    </script>
+</div>
+</body>
+</html>
